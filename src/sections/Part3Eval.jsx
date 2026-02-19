@@ -1,5 +1,6 @@
 import { EVAL_DIMENSIONS } from '../data/content';
 import Ref from '../components/Ref';
+import Footnote from '../components/Footnote';
 
 export default function Part3Eval() {
   return (
@@ -71,7 +72,7 @@ export default function Part3Eval() {
       <p className="content-p">
         <strong>Step 3 &mdash; Measure judge per dimension:</strong> Run 3 configurations (different models {'\u00d7'} prompting strategies).
         Per-dimension{' '}
-        <Ref text="Cohen's Kappa" url="https://journals.sagepub.com/doi/10.1177/001316446002000104" /> vs. expert.
+        <Ref text="Cohen's Kappa" url="https://journals.sagepub.com/doi/10.1177/001316446002000104" /><Footnote id="kappa" /> vs. expert.
         No pharma-specific LLM-judge benchmarks exist &mdash; building this measurement IS the work.
       </p>
 
@@ -135,7 +136,7 @@ CLINICAL APPROP.     → Human expert for non-GREEN`}
         <strong>Recursion terminates at:</strong> human ground truth (golden dataset), deterministic checks
         (source verification, stat rules), real-world outcomes (trial results). Minimizing human effort while
         maximizing automated coverage is an{' '}
-        <Ref text="active learning" url="https://burrsettles.com/pub/settles.activelearning.pdf" /> problem.
+        <Ref text="active learning" url="https://burrsettles.com/pub/settles.activelearning.pdf" /><Footnote id="activeLearning" /> problem.
       </p>
 
       <div className="diagram-box">

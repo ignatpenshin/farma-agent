@@ -1,5 +1,6 @@
 import { SIGNALS } from '../data/content';
 import Ref from '../components/Ref';
+import Footnote from '../components/Footnote';
 
 export default function Part2Architecture() {
   return (
@@ -21,7 +22,7 @@ export default function Part2Architecture() {
       <p className="content-p">
         Six signals computed before generation, fed into a Meta-Cognitive Classifier (~300-600ms).
         This is NOT an LLM asking &ldquo;are you confident?&rdquo; &mdash; it&rsquo;s a multi-signal assessment
-        where most signals are computed without LLM calls (NLI model, statistical analysis, NER).
+        where most signals are computed without LLM calls (NLI<Footnote id="nli" /> model, statistical analysis, NER<Footnote id="ner" />).
         Avoids the recursive calibration problem identified in{' '}
         <Ref text="Kadavath et al., 2022" url="https://arxiv.org/abs/2207.05221" />.
       </p>
@@ -50,6 +51,10 @@ export default function Part2Architecture() {
           ))}
         </tbody>
       </table>
+
+      <p className="content-p" style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '-0.5rem' }}>
+        Source Agreement uses DeBERTa-v3<Footnote id="deberta" /> for NLI classification.
+      </p>
 
       <div className="arch-flow mt-4">
         <div className="text-xs mono text-muted uppercase mb-1">PIPELINE FLOW</div>

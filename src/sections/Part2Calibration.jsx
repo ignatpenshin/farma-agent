@@ -1,5 +1,6 @@
 import { HORIZONS } from '../data/content';
 import Ref from '../components/Ref';
+import Footnote from '../components/Footnote';
 
 export default function Part2Calibration() {
   return (
@@ -38,17 +39,17 @@ export default function Part2Calibration() {
       <p className="content-p">
         <strong>Stage 1:</strong> Logistic regression &mdash; 7 signal features {'\u2192'} raw confidence score.
         Why logistic: 200-400 labels/month won&rsquo;t support complex models. Interpretable weights required
-        in regulated pharma. (<Ref text="Platt, 1999" url="https://www.cs.cornell.edu/courses/cs678/2007sp/platt.pdf" /> for Platt scaling analogy)
+        in regulated pharma. (<Ref text="Platt, 1999" url="https://www.cs.cornell.edu/courses/cs678/2007sp/platt.pdf" /> for Platt scaling<Footnote id="platt" /> analogy)
       </p>
 
       <p className="content-p">
-        <strong>Stage 2:</strong> Isotonic regression &mdash; raw score {'\u2192'} calibrated probability.
+        <strong>Stage 2:</strong> Isotonic regression<Footnote id="isotonic" /> &mdash; raw score {'\u2192'} calibrated probability.
         Corrects systematic over/under-confidence.
         (<Ref text="Zadrozny & Elkan, 2002" url="https://dl.acm.org/doi/10.1145/775047.775151" />)
       </p>
 
       <div className="diagram-box mt-2">
-        <div className="text-xs mono text-muted uppercase mb-1">COLD-START PROTOCOL</div>
+        <div className="text-xs mono text-muted uppercase mb-1">COLD-START<Footnote id="coldStart" /> PROTOCOL</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.75rem' }}>
           {[
             { label: 'Weeks 1-4', desc: 'Rule-based thresholds. ~15-20% escalation. Conservative.', pct: 18 },
@@ -77,7 +78,7 @@ export default function Part2Calibration() {
       </div>
 
       <p className="content-p mt-2">
-        <strong>Circuit breaker:</strong> Domain accumulates {'\u2265'}3 S2+ errors in 14 days {'\u2192'}
+        <strong>Circuit breaker<Footnote id="circuitBreaker" />:</strong> Domain accumulates {'\u2265'}3 S2+ errors in 14 days {'\u2192'}
         force-route all queries to RED {'\u2192'} investigate {'\u2192'} fix {'\u2192'} re-close.
       </p>
 
@@ -105,7 +106,7 @@ export default function Part2Calibration() {
           <tr>
             <td>C9 Confidence Lock-In</td>
             <td>
-              Partially (prompts + <Ref text="self-consistency" url="https://arxiv.org/abs/2203.11171" />)
+              Partially (prompts + <Ref text="self-consistency" url="https://arxiv.org/abs/2203.11171" /><Footnote id="selfConsistency" />)
             </td>
             <td>Reduced</td>
           </tr>
@@ -133,7 +134,7 @@ export default function Part2Calibration() {
           Audit trail, system validation, change control. Threshold adjustments need human approval.
         </li>
         <li>
-          <strong>ALCOA+ data integrity</strong>{' '}
+          <strong>ALCOA+<Footnote id="alcoa" /> data integrity</strong>{' '}
           (<Ref text="FDA Guidance" url="https://www.fda.gov/media/119570/download" />;{' '}
           <Ref text="WHO TRS 1033" url="https://www.who.int/publications/m/item/annex-4-trs-1033" />):
           Every response traceable to specific documents, model version, threshold configuration.

@@ -504,6 +504,95 @@
   line-height: 1.4;
 }
 
+/* Footnotes */
+.footnote-wrapper {
+  position: relative;
+  display: inline;
+}
+
+.footnote-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  color: var(--accent-heat);
+  background: rgba(255, 72, 0, 0.06);
+  border: 1px solid rgba(255, 72, 0, 0.25);
+  cursor: pointer;
+  vertical-align: super;
+  margin-left: 1px;
+  margin-right: 1px;
+  line-height: 1;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.footnote-trigger:hover,
+.footnote-trigger.active {
+  background: rgba(255, 72, 0, 0.12);
+  border-color: var(--accent-heat);
+  box-shadow: 0 0 6px var(--accent-heat-glow);
+}
+
+.footnote-panel {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  width: 360px;
+  background: var(--bg-panel);
+  border: 1px solid var(--line-dim);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.25rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: footnote-in 0.15s ease-out;
+}
+
+.footnote-panel::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--accent-heat);
+  border-left: 2px solid var(--accent-heat);
+}
+
+.footnote-term {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-heat);
+  font-weight: 500;
+}
+
+.footnote-text {
+  display: block;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+@keyframes footnote-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .layout-grid {
@@ -514,4 +603,5 @@
   .context-rail { display: none; }
   .main-content { padding: 2rem; }
   .meta-grid { grid-template-columns: 1fr; }
+  .footnote-panel { width: 280px; }
 }

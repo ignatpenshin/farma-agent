@@ -1,4 +1,5 @@
 import Ref from '../components/Ref';
+import Footnote from '../components/Footnote';
 
 export default function Part4Hard() {
   return (
@@ -21,7 +22,7 @@ export default function Part4Hard() {
         <h4 className="subsection-header">4.2 Which architectural decision is most vulnerable?</h4>
         <p className="content-p">
           Zone assignment thresholds (agreement &lt; 0.6 {'\u2192'} Orange, coverage &lt; 0.7 {'\u2192'} Yellow) &mdash;
-          engineering guesses, wrong on day 1. Left as interpretable rules because: no training data at cold start,
+          engineering guesses, wrong on day 1. Left as interpretable rules because: no training data at cold start<Footnote id="coldStart" />,
           rules are auditable in regulated pharma
           (<Ref text="21 CFR Part 11" url="https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-11" />);
           the calibration loop
@@ -33,12 +34,12 @@ export default function Part4Hard() {
       <div style={{ marginBottom: '2.5rem' }}>
         <h4 className="subsection-header">4.3 Unlimited research budget?</h4>
         <p className="content-p">
-          Mechanistic interpretability of epistemic states in transformers &mdash; internal representations
+          Mechanistic interpretability<Footnote id="mechInterp" /> of epistemic states in transformers &mdash; internal representations
           separating &ldquo;knows X&rdquo; from &ldquo;pattern-completing plausible text.&rdquo;{' '}
           <Ref text="CCS (Burns et al., 2022)" url="https://arxiv.org/abs/2212.03827" />,{' '}
           <Ref text="representation engineering (Zou et al., 2023)" url="https://arxiv.org/abs/2310.01405" />, and{' '}
           <Ref text="ITI (Li et al., 2023)" url="https://arxiv.org/abs/2306.03341" /> show this is tractable narrowly.
-          Generalized to RAG, it gives an <em>intrinsic</em> confidence signal &mdash; making the Meta-Cognitive
+          Generalized to RAG<Footnote id="rag" />, it gives an <em>intrinsic</em> confidence signal &mdash; making the Meta-Cognitive
           Classifier obsolete and collapsing the B4 residual risk.
         </p>
       </div>

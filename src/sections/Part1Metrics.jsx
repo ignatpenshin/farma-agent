@@ -1,5 +1,6 @@
 import { METRICS } from '../data/content';
 import Ref from '../components/Ref';
+import Footnote from '../components/Footnote';
 
 export default function Part1Metrics() {
   return (
@@ -58,7 +59,7 @@ export default function Part1Metrics() {
 
       <div className="callout" style={{ marginTop: '2rem' }}>
         <strong>Target shift:</strong> From &ldquo;reduce 15% error rate&rdquo; &rarr;
-        &ldquo;achieve EDS &gt; 0.85 and Escalation Recall &gt; 0.90 on S2+S3.&rdquo;
+        &ldquo;achieve EDS<Footnote id="auroc" /> &gt; 0.85 and Escalation Recall &gt; 0.90 on S2+S3.&rdquo;
       </div>
 
       <div className="diagram-box mt-2">

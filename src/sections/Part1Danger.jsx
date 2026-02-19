@@ -1,3 +1,5 @@
+import Footnote from '../components/Footnote';
+
 export default function Part1Danger() {
   return (
     <section id="part1-2">
@@ -8,7 +10,7 @@ export default function Part1Danger() {
       </div>
 
       <p className="content-p">
-        Every other mechanism has a detection surface &mdash; metadata (A1/A2/B6), NLI (C10),
+        Every other mechanism has a detection surface &mdash; metadata (A1/A2/B6), NLI<Footnote id="nli" /> (C10),
         rules (B5), coverage analysis (C7). B4 has <strong>none</strong>.
       </p>
 

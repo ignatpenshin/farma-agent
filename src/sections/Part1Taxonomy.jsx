@@ -1,5 +1,6 @@
 import { TAXONOMY } from '../data/content';
 import Ref from '../components/Ref';
+import Footnote from '../components/Footnote';
 
 function TaxRow({ item }) {
   const isVeryLow = item.detectability === 'Very Low';
@@ -50,7 +51,7 @@ export default function Part1Taxonomy() {
         incomplete &mdash; deployment will reveal others.
       </p>
 
-      <h3 className="subsection-header">A. Retrieval Failures &mdash; The agent finds the wrong evidence</h3>
+      <h3 className="subsection-header">A. Retrieval Failures &mdash; The agent finds the wrong evidence<Footnote id="rag" /></h3>
       <table className="data-table">
         <thead>
           <tr>
@@ -96,7 +97,7 @@ export default function Part1Taxonomy() {
       </table>
 
       <div className="callout" style={{ marginTop: '2rem' }}>
-        <strong>Engineering ceiling:</strong> B4, A3, C9 have no reliable automated mitigation.
+        <strong>Engineering ceiling:</strong> B4, A3, C9<Footnote id="autoregressive" /> have no reliable automated mitigation.
         This sets the upper bound on what any architecture achieves without human review on every response.
       </div>
     </section>

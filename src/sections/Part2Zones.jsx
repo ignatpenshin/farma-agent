@@ -1,5 +1,6 @@
 import { ZONES, DISTRIBUTION } from '../data/content';
 import Ref from '../components/Ref';
+import Footnote from '../components/Footnote';
 
 export default function Part2Zones() {
   return (
@@ -36,7 +37,7 @@ export default function Part2Zones() {
       <div className="callout">
         <strong>ORANGE zone detail</strong> (going beyond &ldquo;show both opinions&rdquo;):<br />
         1. <strong>Extract</strong> from each source: design, n, population, endpoint + result + CI<br />
-        2. <strong>Weight</strong> by evidence hierarchy {'\u00d7'} sample size {'\u00d7'} recency (<Ref text="GRADE" url="https://pmc.ncbi.nlm.nih.gov/articles/PMC2335261/" />)<br />
+        2. <strong>Weight</strong> by evidence hierarchy<Footnote id="grade" /> {'\u00d7'} sample size {'\u00d7'} recency (<Ref text="GRADE" url="https://pmc.ncbi.nlm.nih.gov/articles/PMC2335261/" />)<br />
         3. <strong>Score</strong> positions: Position A = {'\u03a3'} weights supporting. Position B = {'\u03a3'} weights opposing<br />
         4. <strong>Analyze</strong> WHY studies disagree &mdash; dose? population? endpoint?<br />
         5. <strong>State boundary:</strong> Engineering ends where causal reasoning beyond evidence begins
@@ -65,7 +66,7 @@ export default function Part2Zones() {
       </table>
 
       <p className="content-p" style={{ marginTop: '1rem' }}>
-        Client constraint met: 7-10% routed to humans at maturity (within the 5-10% budget).
+        Client constraint met: 7-10% routed to humans<Footnote id="hitl" /> at maturity (within the 5-10% budget).
       </p>
     </section>
   );

@@ -1,3 +1,5 @@
+import Footnote from '../components/Footnote';
+
 export default function Hero() {
   return (
     <section id="intro" className="hero">
@@ -18,7 +20,7 @@ export default function Hero() {
       </h1>
 
       <p className="content-p" style={{ fontSize: '1.05rem', maxWidth: '60ch' }}>
-        The problem is not accuracy &mdash; it&rsquo;s calibration. The agent cannot distinguish its errors
+        The problem is not accuracy &mdash; it&rsquo;s calibration<Footnote id="calibration" />. The agent cannot distinguish its errors
         from correct answers. The solution: make failures <strong>predictable</strong> and <strong>recoverable</strong>,
         not eliminate them.
       </p>
