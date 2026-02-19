@@ -8,7 +8,7 @@ export default function ContextRail() {
       <div className="author-block">
         <div className="text-xs mono text-muted uppercase mb-1">Author Context</div>
         <h3 className="mono" style={{ margin: '0.5rem 0', color: 'var(--text-main)', fontSize: '0.95rem' }}>
-          Ignat Drozdov
+          Ignat Penshin
         </h3>
         <p className="text-xs text-muted" style={{ marginBottom: '1rem' }}>AI Engineer</p>
         <div className="text-xs text-muted" style={{ lineHeight: 1.5 }}>
